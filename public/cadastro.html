@@ -101,6 +101,33 @@
 </html>
 
 <script>
+  //Nome.length > 1
+  //• E-mail deve conter @ e .
+  //• Senha deve ser > 6
+  //• Senha de confirmação == Senha
+  //• CPF.length == 11
+  if(nomeVar.length < 1){
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "(Mensagem de erro para nome inválido)";
+    return false;
+  }else if(emailVar.length < 1){
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "(Mensagem de erro para e-mail inválido)";
+    return false;
+  }else if(senhaVar.length < 6){
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "(Mensagem de erro para senha inválida)";
+    return false;
+  }else if(confirmacaoSenhaVar != senhaVar){
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "(Mensagem de erro para confirmação de senha inválida)";
+    return false;
+  }else if(cpf.length != 11){
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML = "(Mensagem de erro para CPF inválido)";
+    return false;
+  }
+  
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
   let listaEmpresasCadastradas = [];
